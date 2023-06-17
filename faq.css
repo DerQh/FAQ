@@ -1,0 +1,112 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-family: "DM Sans", sans-serif;
+  font-family: "Montserrat", sans-serif;
+  font-family: "Roboto", sans-serif;
+}
+body {
+  font-family: "Montserrat", sans-serif;
+  background-color: aliceblue;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+h1 {
+  margin: 50px 0 30px;
+  text-align: center;
+  /* font-weight: 700; */
+}
+
+.faq-container {
+  max-width: 600px;
+  margin: 0 auto;
+}
+.btn {
+  padding: 0 2px;
+  margin-top: 5px;
+}
+.faq {
+  position: relative;
+  background-color: transparent;
+  border: 1px solid grey;
+  border-radius: 10px;
+  padding: 30px;
+  margin: 20px 0;
+  overflow: hidden;
+  transition: 0.3s ease;
+}
+.faq.active {
+  background-color: rgb(143, 135, 135, 0.2);
+  /* background-color: #fff; */
+  box-shadow: 0 3px 6px rgb(0, 0, 0, 0.1), 0 3px 6px rgb(0, 0, 0, 0.1);
+}
+.faq.active::before,
+.faq.active::after {
+  content: "\f075";
+  font-family: "Font Awesome 5 Free";
+  color: rgb(127, 175, 175);
+  font-size: 5rem;
+  position: absolute;
+  opacity: 0.2;
+  top: 5px;
+  left: 20px;
+  z-index: 0;
+}
+.faq.active::before {
+  color: rgb(184, 184, 38);
+  top: -5px;
+  left: -20px;
+  transform: rotateY(180deg);
+}
+.faq-title {
+  margin: 0 35px 0 0;
+}
+
+.faq-text {
+  display: none;
+  margin: 35px 0 0;
+}
+
+.faq.active .faq-text {
+  display: block;
+}
+
+.faq-toggel {
+  background-color: transparent;
+  border-radius: 50%;
+  border: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  padding: 0;
+  position: absolute;
+  top: 30px;
+  right: 10px;
+  height: 20px;
+  width: 20px;
+}
+
+.faq-toggel .fa-times {
+  display: none;
+}
+
+.faq.active .faq-toggel .fa-times {
+  display: block;
+}
+
+.faq.active .faq-toggel .fa-chevron-down {
+  display: none;
+}
+
+.faq.active .faq-toggel {
+  background-color: rgb(198, 194, 189);
+}
